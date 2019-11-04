@@ -38,7 +38,7 @@ class TokenUser:
 
     @cached_property
     def username(self):
-        return self.token.get('username', '')
+        return self.token.get(api_settings.USERNAME_FIELD, '')
 
     @cached_property
     def is_staff(self):

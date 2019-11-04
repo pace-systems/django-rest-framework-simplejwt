@@ -25,6 +25,9 @@ class TokenObtainSerializer(serializers.Serializer):
     }
 
     def __init__(self, *args, **kwargs):
+        if api_settings.USERNAME_FIELD != 'username':
+            self.username_field = api_settings.USERNAME_FIELD
+
         super().__init__(*args, **kwargs)
 
         self.fields[self.username_field] = serializers.CharField()
