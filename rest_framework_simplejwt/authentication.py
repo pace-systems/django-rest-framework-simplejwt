@@ -107,8 +107,10 @@ class JWTAuthentication(authentication.BaseAuthentication):
         except KeyError:
             raise InvalidToken(_('Token contained no recognizable user identification'))
         except TypeError:
-            raise InvalidToken(_('Token contained no recognizable user identification'))
-
+            if type(validated_token) is int:
+                user_id = validated_token
+            else:
+                raise InvalidToken(_('Token contained no recognizable user identification'))
         try:
             user = User.objects.get(**{api_settings.USER_ID_FIELD: user_id})
         except User.DoesNotExist:
