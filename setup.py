@@ -3,10 +3,7 @@ from setuptools import (
     setup,
     find_packages,
 )
-import sys
-CURRENT_PYTHON = sys.version_info[:2]
-REQUIRED_PYTHON = (3, 8)
-if
+
 extras_require = {
     'test': [
         'cryptography',
