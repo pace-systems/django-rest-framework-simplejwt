@@ -3,7 +3,10 @@ from setuptools import (
     setup,
     find_packages,
 )
-
+import sys
+CURRENT_PYTHON = sys.version_info[:2]
+REQUIRED_PYTHON = (3, 8)
+if
 extras_require = {
     'test': [
         'cryptography',
@@ -57,7 +60,7 @@ setup(
         'djangorestframework',
         'pyjwt',
     ],
-    python_requires='>=3.6,<=3.8',
+    python_requires='>=3.6, ~=3.8, ~=3.7',
     extras_require=extras_require,
     packages=find_packages(exclude=['tests', 'tests.*', 'licenses', 'requirements']),
     classifiers=[
