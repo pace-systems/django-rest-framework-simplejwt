@@ -5,7 +5,7 @@ from django.test import TestCase
 
 from rest_framework_simplejwt.backends import TokenBackend
 from rest_framework_simplejwt.exceptions import TokenBackendError
-from rest_framework_simplejwt.utils import aware_utcnow, make_utc
+from rest_framework_simplejwt.utils import aware_utcnow, make_utc, DECODE_STRINGS
 
 SECRET = 'not_secret'
 
@@ -152,9 +152,13 @@ class TestTokenBackend(TestCase):
 
     def test_decode_hmac_with_invalid_sig(self):
         self.payload['exp'] = aware_utcnow() + timedelta(days=1)
-        token_1 = jwt.encode(self.payload, SECRET, algorithm='HS256').decode('utf-8')
+        token_1 = jwt.encode(self.payload, SECRET, algorithm='HS256')
         self.payload['foo'] = 'baz'
-        token_2 = jwt.encode(self.payload, SECRET, algorithm='HS256').decode('utf-8')
+        token_2 = jwt.encode(self.payload, SECRET, algorithm='HS256')
+
+        if DECODE_STRINGS:
+            token_1 = token_1.decode('utf-8')
+            token_2 = token_2.decode('utf-8')
 
         token_2_payload = token_2.rsplit('.', 1)[0]
         token_1_sig = token_1.rsplit('.', 1)[-1]
@@ -165,9 +169,12 @@ class TestTokenBackend(TestCase):
 
     def test_decode_hmac_with_invalid_sig_no_verify(self):
         self.payload['exp'] = aware_utcnow() + timedelta(days=1)
-        token_1 = jwt.encode(self.payload, SECRET, algorithm='HS256').decode('utf-8')
+        token_1 = jwt.encode(self.payload, SECRET, algorithm='HS256')
         self.payload['foo'] = 'baz'
-        token_2 = jwt.encode(self.payload, SECRET, algorithm='HS256').decode('utf-8')
+        token_2 = jwt.encode(self.payload, SECRET, algorithm='HS256')
+        if DECODE_STRINGS:
+            token_1 = token_1.decode('utf-8')
+            token_2 = token_2.decode('utf-8')
 
         token_2_payload = token_2.rsplit('.', 1)[0]
         token_1_sig = token_1.rsplit('.', 1)[-1]
@@ -182,8 +189,9 @@ class TestTokenBackend(TestCase):
         self.payload['exp'] = aware_utcnow() + timedelta(days=1)
         self.payload['foo'] = 'baz'
 
-        token = jwt.encode(self.payload, SECRET, algorithm='HS256').decode('utf-8')
-
+        token = jwt.encode(self.payload, SECRET, algorithm='HS256')
+        if DECODE_STRINGS:
+            token = token.decode('utf-8')
         self.assertEqual(self.hmac_token_backend.decode(token), self.payload)
 
     def test_decode_rsa_with_no_expiry(self):
@@ -209,9 +217,13 @@ class TestTokenBackend(TestCase):
 
     def test_decode_rsa_with_invalid_sig(self):
         self.payload['exp'] = aware_utcnow() + timedelta(days=1)
-        token_1 = jwt.encode(self.payload, PRIVATE_KEY, algorithm='RS256').decode('utf-8')
+        token_1 = jwt.encode(self.payload, PRIVATE_KEY, algorithm='RS256')
         self.payload['foo'] = 'baz'
-        token_2 = jwt.encode(self.payload, PRIVATE_KEY, algorithm='RS256').decode('utf-8')
+        token_2 = jwt.encode(self.payload, PRIVATE_KEY, algorithm='RS256')
+
+        if DECODE_STRINGS:
+            token_1 = token_1.decode('utf-8')
+            token_2 = token_2.decode('utf-8')
 
         token_2_payload = token_2.rsplit('.', 1)[0]
         token_1_sig = token_1.rsplit('.', 1)[-1]
@@ -222,9 +234,13 @@ class TestTokenBackend(TestCase):
 
     def test_decode_rsa_with_invalid_sig_no_verify(self):
         self.payload['exp'] = aware_utcnow() + timedelta(days=1)
-        token_1 = jwt.encode(self.payload, PRIVATE_KEY, algorithm='RS256').decode('utf-8')
+        token_1 = jwt.encode(self.payload, PRIVATE_KEY, algorithm='RS256')
         self.payload['foo'] = 'baz'
-        token_2 = jwt.encode(self.payload, PRIVATE_KEY, algorithm='RS256').decode('utf-8')
+        token_2 = jwt.encode(self.payload, PRIVATE_KEY, algorithm='RS256')
+
+        if DECODE_STRINGS:
+            token_1 = token_1.decode('utf-8')
+            token_2 = token_2.decode('utf-8')
 
         token_2_payload = token_2.rsplit('.', 1)[0]
         token_1_sig = token_1.rsplit('.', 1)[-1]
@@ -239,7 +255,9 @@ class TestTokenBackend(TestCase):
         self.payload['exp'] = aware_utcnow() + timedelta(days=1)
         self.payload['foo'] = 'baz'
 
-        token = jwt.encode(self.payload, PRIVATE_KEY, algorithm='RS256').decode('utf-8')
+        token = jwt.encode(self.payload, PRIVATE_KEY, algorithm='RS256')
+        if DECODE_STRINGS:
+            token = token.decode('utf-8')
 
         self.assertEqual(self.rsa_token_backend.decode(token), self.payload)
 
@@ -249,6 +267,8 @@ class TestTokenBackend(TestCase):
         self.payload['aud'] = AUDIENCE
         self.payload['iss'] = ISSUER
 
-        token = jwt.encode(self.payload, PRIVATE_KEY, algorithm='RS256').decode('utf-8')
+        token = jwt.encode(self.payload, PRIVATE_KEY, algorithm='RS256')
+        if DECODE_STRINGS:
+            token = token.decode('utf-8')
 
         self.assertEqual(self.aud_iss_token_backend.decode(token), self.payload)
