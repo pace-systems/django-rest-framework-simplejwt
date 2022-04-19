@@ -7,7 +7,7 @@ from django.utils.timezone import is_naive, make_aware, utc
 
 a_string = "hello"
 DECODE_STRINGS = True
-if hasattr(a_string, 'decode'):
+if not hasattr(a_string, 'decode'):
     DECODE_STRINGS = False
 
 
