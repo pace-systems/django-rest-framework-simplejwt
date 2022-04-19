@@ -5,6 +5,11 @@ from django.conf import settings
 from django.utils.functional import lazy
 from django.utils.timezone import is_naive, make_aware, utc
 
+a_string = "hello"
+DECODE_STRINGS = True
+if hasattr(a_string, 'decode'):
+    DECODE_STRINGS = False
+
 
 def make_utc(dt):
     if settings.USE_TZ and is_naive(dt):

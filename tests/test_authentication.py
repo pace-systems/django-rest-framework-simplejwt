@@ -12,6 +12,7 @@ from rest_framework_simplejwt.exceptions import (
 from rest_framework_simplejwt.models import TokenUser
 from rest_framework_simplejwt.settings import api_settings
 from rest_framework_simplejwt.tokens import AccessToken, SlidingToken
+from rest_framework_simplejwt.utils import DECODE_STRINGS
 
 from .utils import override_api_settings
 
@@ -37,7 +38,11 @@ class TestJWTAuthentication(TestCase):
         self.assertEqual(self.backend.get_header(request), self.fake_header)
 
         # Should work for unicode headers
-        request = self.factory.get('/test-url/', HTTP_AUTHORIZATION=self.fake_header.decode('utf-8'))
+        header = self.fake_header
+        if DECODE_STRINGS:
+            header = header.decode('utf-8')
+        request = self.factory.get('/test-url/', HTTP_AUTHORIZATION=header)
+
         self.assertEqual(self.backend.get_header(request), self.fake_header)
 
     def test_get_raw_token(self):
