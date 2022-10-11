@@ -20,16 +20,16 @@ msgstr ""
 msgid "Given token not valid for any token type"
 msgstr "Le type de jeton fourni n'est pas valide"
 
-#: authentication.py:116 authentication.py:143
+#: authentication.py:116 authentication.py:121 authentication.py:147
 msgid "Token contained no recognizable user identification"
 msgstr ""
 "Le jeton ne contient aucune information permettant d'identifier l'utilisateur"
 
-#: authentication.py:121
+#: authentication.py:125
 msgid "User not found"
 msgstr "L'utilisateur n'a pas été trouvé"
 
-#: authentication.py:124
+#: authentication.py:128
 msgid "User is inactive"
 msgstr "L'utilisateur est désactivé"
 
@@ -55,10 +55,10 @@ msgid "Invalid algorithm specified"
 msgstr "L'algorithme spécifié est invalide"
 
 #: serializers.py:30
-msgid "No active account found with the given credentials"
-msgstr "Aucun compte actif n'a été trouvé avec les identifiants fournis"
+msgid "The email or password you entered is incorrect."
+msgstr ""
 
-#: settings.py:70
+#: settings.py:71
 msgid ""
 "The '{}' setting has been removed. Please refer to '{}' for available "
 "settings."
@@ -113,3 +113,6 @@ msgstr "Le privilège '{}' du jeton a expiré"
 #: tokens.py:230
 msgid "Token is blacklisted"
 msgstr "Le jeton a été banni"
+
+#~ msgid "No active account found with the given credentials"
+#~ msgstr "Aucun compte actif n'a été trouvé avec les identifiants fournis"

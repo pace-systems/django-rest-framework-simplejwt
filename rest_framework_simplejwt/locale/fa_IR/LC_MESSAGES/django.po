@@ -19,15 +19,15 @@ msgstr "هدر اعتبارسنجی باید شامل دو مقدار جدا ش�
 msgid "Given token not valid for any token type"
 msgstr "توکن داده شده برای هیچ نوع توکنی معتبر نمی‌باشد"
 
-#: authentication.py:116 authentication.py:143
+#: authentication.py:116 authentication.py:121 authentication.py:147
 msgid "Token contained no recognizable user identification"
 msgstr "توکن شامل هیچ شناسه قابل تشخیصی از کاربر نیست"
 
-#: authentication.py:121
+#: authentication.py:125
 msgid "User not found"
 msgstr "کاربر یافت نشد"
 
-#: authentication.py:124
+#: authentication.py:128
 msgid "User is inactive"
 msgstr "کاربر غیرفعال است"
 
@@ -53,10 +53,10 @@ msgid "Invalid algorithm specified"
 msgstr ""
 
 #: serializers.py:30
-msgid "No active account found with the given credentials"
-msgstr "هیچ اکانت فعالی برای اطلاعات داده شده یافت نشد"
+msgid "The email or password you entered is incorrect."
+msgstr ""
 
-#: settings.py:70
+#: settings.py:71
 msgid ""
 "The '{}' setting has been removed. Please refer to '{}' for available "
 "settings."
@@ -109,3 +109,6 @@ msgstr "'{}' claim توکن منقضی شده"
 #: tokens.py:230
 msgid "Token is blacklisted"
 msgstr "توکن به لیست سیاه رفته است"
+
+#~ msgid "No active account found with the given credentials"
+#~ msgstr "هیچ اکانت فعالی برای اطلاعات داده شده یافت نشد"

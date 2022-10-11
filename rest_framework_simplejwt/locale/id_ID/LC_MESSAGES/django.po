@@ -20,15 +20,15 @@ msgstr "Header otorisasi harus berisi dua nilai yang dipisahkan spasi"
 msgid "Given token not valid for any token type"
 msgstr "Token yang diberikan tidak valid untuk semua jenis token"
 
-#: authentication.py:116 authentication.py:143
+#: authentication.py:116 authentication.py:121 authentication.py:147
 msgid "Token contained no recognizable user identification"
 msgstr "Token tidak mengandung identifikasi pengguna yang dapat dikenali"
 
-#: authentication.py:121
+#: authentication.py:125
 msgid "User not found"
 msgstr "Pengguna tidak ditemukan"
 
-#: authentication.py:124
+#: authentication.py:128
 msgid "User is inactive"
 msgstr "Pengguna tidak aktif"
 
@@ -54,10 +54,10 @@ msgid "Invalid algorithm specified"
 msgstr "Algoritma yang ditentukan tidak valid"
 
 #: serializers.py:30
-msgid "No active account found with the given credentials"
-msgstr "Tidak ada akun aktif yang ditemukan dengan kredensial yang diberikan"
+msgid "The email or password you entered is incorrect."
+msgstr ""
 
-#: settings.py:70
+#: settings.py:71
 msgid ""
 "The '{}' setting has been removed. Please refer to '{}' for available "
 "settings."
@@ -112,3 +112,7 @@ msgstr "Klaim token '{}' telah kedaluwarsa"
 #: tokens.py:230
 msgid "Token is blacklisted"
 msgstr "Token masuk daftar hitam"
+
+#~ msgid "No active account found with the given credentials"
+#~ msgstr ""
+#~ "Tidak ada akun aktif yang ditemukan dengan kredensial yang diberikan"

@@ -23,15 +23,15 @@ msgstr "Авторизаційний заголовок має містити д
 msgid "Given token not valid for any token type"
 msgstr "Наданий токен не відповідає жодному типу ключа"
 
-#: authentication.py:116 authentication.py:143
+#: authentication.py:116 authentication.py:121 authentication.py:147
 msgid "Token contained no recognizable user identification"
 msgstr "Наданий токен не мітить жодної ідентифікаційної інформації"
 
-#: authentication.py:121
+#: authentication.py:125
 msgid "User not found"
 msgstr "Користувач не знайдений"
 
-#: authentication.py:124
+#: authentication.py:128
 msgid "User is inactive"
 msgstr "Користувач неактивний"
 
@@ -57,10 +57,10 @@ msgid "Invalid algorithm specified"
 msgstr "Вказаний невірний алгоритм"
 
 #: serializers.py:30
-msgid "No active account found with the given credentials"
-msgstr "Не знайдено жодного облікового запису по наданих облікових даних"
+msgid "The email or password you entered is incorrect."
+msgstr ""
 
-#: settings.py:70
+#: settings.py:71
 msgid ""
 "The '{}' setting has been removed. Please refer to '{}' for available "
 "settings."
@@ -113,3 +113,6 @@ msgstr "Заголовок '{}' токена не дійсний"
 #: tokens.py:230
 msgid "Token is blacklisted"
 msgstr "Токен занесений у чорний список"
+
+#~ msgid "No active account found with the given credentials"
+#~ msgstr "Не знайдено жодного облікового запису по наданих облікових даних"

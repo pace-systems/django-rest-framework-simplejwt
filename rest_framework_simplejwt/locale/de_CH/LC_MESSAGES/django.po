@@ -21,15 +21,15 @@ msgstr ""
 msgid "Given token not valid for any token type"
 msgstr "Der Token ist für keinen Tokentyp gültig"
 
-#: authentication.py:116 authentication.py:143
+#: authentication.py:116 authentication.py:121 authentication.py:147
 msgid "Token contained no recognizable user identification"
 msgstr "Token enthält keine erkennbare Benutzeridentifikation"
 
-#: authentication.py:121
+#: authentication.py:125
 msgid "User not found"
 msgstr "Benutzer nicht gefunden"
 
-#: authentication.py:124
+#: authentication.py:128
 msgid "User is inactive"
 msgstr "Inaktiver Benutzer"
 
@@ -55,10 +55,10 @@ msgid "Invalid algorithm specified"
 msgstr ""
 
 #: serializers.py:30
-msgid "No active account found with the given credentials"
-msgstr "Kein aktiver Account mit diesen Zugangsdaten gefunden"
+msgid "The email or password you entered is incorrect."
+msgstr ""
 
-#: settings.py:70
+#: settings.py:71
 msgid ""
 "The '{}' setting has been removed. Please refer to '{}' for available "
 "settings."
@@ -113,3 +113,6 @@ msgstr "Das Tokenrecht '{}' ist abgelaufen"
 #: tokens.py:230
 msgid "Token is blacklisted"
 msgstr "Token steht auf der Blacklist"
+
+#~ msgid "No active account found with the given credentials"
+#~ msgstr "Kein aktiver Account mit diesen Zugangsdaten gefunden"
