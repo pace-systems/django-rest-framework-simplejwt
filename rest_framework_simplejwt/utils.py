@@ -1,9 +1,9 @@
 from calendar import timegm
-from datetime import datetime
+from datetime import datetime, timezone
 
 from django.conf import settings
 from django.utils.functional import lazy
-from django.utils.timezone import is_naive, make_aware, utc
+from django.utils.timezone import is_naive, make_aware
 
 a_string = "hello"
 DECODE_STRINGS = True
@@ -13,7 +13,7 @@ if not hasattr(a_string, 'decode'):
 
 def make_utc(dt):
     if settings.USE_TZ and is_naive(dt):
-        return make_aware(dt, timezone=utc)
+        return make_aware(dt, timezone=timezone.utc)
 
     return dt
 
