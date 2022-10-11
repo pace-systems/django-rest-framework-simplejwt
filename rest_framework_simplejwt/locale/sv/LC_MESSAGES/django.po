@@ -20,15 +20,15 @@ msgstr "Auktoriseringshuvudet måste innehålla två mellanslagsavgränsade vär
 msgid "Given token not valid for any token type"
 msgstr "Givet token är inte giltigt för någon tokentyp"
 
-#: authentication.py:116 authentication.py:143
+#: authentication.py:116 authentication.py:121 authentication.py:147
 msgid "Token contained no recognizable user identification"
 msgstr "Token innehöll ingen identifiering av användaren"
 
-#: authentication.py:121
+#: authentication.py:125
 msgid "User not found"
 msgstr "Användaren hittades inte"
 
-#: authentication.py:124
+#: authentication.py:128
 msgid "User is inactive"
 msgstr "Användaren är inaktiv"
 
@@ -54,10 +54,10 @@ msgid "Invalid algorithm specified"
 msgstr "Ogiltig algoritm har angetts"
 
 #: serializers.py:30
-msgid "No active account found with the given credentials"
-msgstr "Inget aktivt konto hittades med de angivna användaruppgifterna"
+msgid "The email or password you entered is incorrect."
+msgstr ""
 
-#: settings.py:70
+#: settings.py:71
 msgid ""
 "The '{}' setting has been removed. Please refer to '{}' for available "
 "settings."
@@ -111,3 +111,6 @@ msgstr "Token '{}'-anspråket har löpt ut"
 #: tokens.py:230
 msgid "Token is blacklisted"
 msgstr "Token är svartlistad"
+
+#~ msgid "No active account found with the given credentials"
+#~ msgstr "Inget aktivt konto hittades med de angivna användaruppgifterna"

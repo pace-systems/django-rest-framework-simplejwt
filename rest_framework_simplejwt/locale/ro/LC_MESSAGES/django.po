@@ -22,15 +22,15 @@ msgstr ""
 msgid "Given token not valid for any token type"
 msgstr "Tokenul dat nu este valid pentru niciun tip de token"
 
-#: authentication.py:116 authentication.py:143
+#: authentication.py:116 authentication.py:121 authentication.py:147
 msgid "Token contained no recognizable user identification"
 msgstr "Tokenul nu conține date de identificare a utilizatorului"
 
-#: authentication.py:121
+#: authentication.py:125
 msgid "User not found"
 msgstr "Utilizatorul nu a fost găsit"
 
-#: authentication.py:124
+#: authentication.py:128
 msgid "User is inactive"
 msgstr "Utilizatorul este inactiv"
 
@@ -58,10 +58,10 @@ msgid "Invalid algorithm specified"
 msgstr "Algoritm nevalid specificat"
 
 #: serializers.py:30
-msgid "No active account found with the given credentials"
-msgstr "Nu a fost găsit cont activ cu aceste date de autentificare"
+msgid "The email or password you entered is incorrect."
+msgstr ""
 
-#: settings.py:70
+#: settings.py:71
 msgid ""
 "The '{}' setting has been removed. Please refer to '{}' for available "
 "settings."
@@ -115,3 +115,6 @@ msgstr "Reclamația tokenului '{}' a expirat"
 #: tokens.py:230
 msgid "Token is blacklisted"
 msgstr "Tokenul este în listă de tokenuri blocate"
+
+#~ msgid "No active account found with the given credentials"
+#~ msgstr "Nu a fost găsit cont activ cu aceste date de autentificare"

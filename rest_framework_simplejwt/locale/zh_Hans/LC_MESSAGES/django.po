@@ -23,15 +23,15 @@ msgstr "授权头必须包含两个用空格分隔的值"
 msgid "Given token not valid for any token type"
 msgstr "此令牌对任何类型的令牌无效"
 
-#: authentication.py:116 authentication.py:143
+#: authentication.py:116 authentication.py:121 authentication.py:147
 msgid "Token contained no recognizable user identification"
 msgstr "令牌未包含用户标识符"
 
-#: authentication.py:121
+#: authentication.py:125
 msgid "User not found"
 msgstr "未找到该用户"
 
-#: authentication.py:124
+#: authentication.py:128
 msgid "User is inactive"
 msgstr "该用户已禁用"
 
@@ -57,10 +57,10 @@ msgid "Invalid algorithm specified"
 msgstr "指定的算法无效"
 
 #: serializers.py:30
-msgid "No active account found with the given credentials"
-msgstr "找不到指定凭据对应的有效用户"
+msgid "The email or password you entered is incorrect."
+msgstr ""
 
-#: settings.py:70
+#: settings.py:71
 msgid ""
 "The '{}' setting has been removed. Please refer to '{}' for available "
 "settings."
@@ -113,3 +113,6 @@ msgstr "令牌 '{}' 声明已过期"
 #: tokens.py:230
 msgid "Token is blacklisted"
 msgstr "令牌已被加入黑名单"
+
+#~ msgid "No active account found with the given credentials"
+#~ msgstr "找不到指定凭据对应的有效用户"
